@@ -1,0 +1,29 @@
+digital-inequality-italy/
+│
+├── README.md
+├── requirements.txt
+├── data/
+│   ├── raw/
+│   │   ├── eurostat_unemployment.csv
+│   │   ├── istat_digital_access.csv
+│   │
+│   └── processed/
+│       ├── cleaned_data.csv
+│
+├── notebooks/
+│   ├── 01_data_cleaning.ipynb
+│   ├── 02_exploratory_analysis.ipynb
+│   ├── 03_visualization.ipynb
+│
+├── src/
+│   ├── data_cleaning.py
+│   ├── analysis.py
+│   ├── visualization.py
+│
+├── outputs/
+│   ├── charts/
+│   ├── report.pdf
+│
+└── README_images/
+    ├── italy_heatmap.png
+    ├── unemployment_chart.png
