@@ -1,0 +1,15 @@
+import pandas as pd
+
+df = pd.read_csv("data/processed/cleaned_data.csv")
+
+# Correlation between education and unemployment
+correlation = df["education_level"].corr(df["unemployment_rate"])
+
+print("Correlation between education and unemployment:", correlation)
+
+# Regional comparison
+north = df[df["region_type"] == "North"]["unemployment_rate"].mean()
+south = df[df["region_type"] == "South"]["unemployment_rate"].mean()
+
+print("North Italy unemployment:", north)
+print("South Italy unemployment:", south)
