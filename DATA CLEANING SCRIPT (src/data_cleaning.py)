@@ -1,0 +1,20 @@
+import pandas as pd
+
+# Load datasets
+unemployment = pd.read_csv("data/raw/eurostat_unemployment.csv")
+digital = pd.read_csv("data/raw/istat_digital_access.csv")
+
+# Standardize column names
+unemployment.columns = unemployment.columns.str.lower()
+digital.columns = digital.columns.str.lower()
+
+# Merge datasets on region
+df = pd.merge(unemployment, digital, on="region")
+
+# Handle missing values
+df = df.dropna()
+
+# Save processed data
+df.to_csv("data/processed/cleaned_data.csv", index=False)
+
+print("Data cleaned successfully!")
