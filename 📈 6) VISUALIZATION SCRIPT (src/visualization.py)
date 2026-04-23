@@ -1,0 +1,20 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+df = pd.read_csv("data/processed/cleaned_data.csv")
+
+# Unemployment by region
+plt.figure()
+sns.barplot(data=df, x="region", y="unemployment_rate")
+plt.xticks(rotation=45)
+plt.title("Unemployment Rate by Region in Italy")
+plt.savefig("outputs/charts/unemployment_chart.png")
+
+# Digital access vs unemployment
+plt.figure()
+sns.scatterplot(data=df, x="digital_access", y="unemployment_rate")
+plt.title("Digital Access vs Unemployment")
+plt.savefig("outputs/charts/digital_vs_unemployment.png")
+
+plt.show()
